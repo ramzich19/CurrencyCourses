@@ -1,7 +1,7 @@
 //
 //  CoursesController.swift
 //  CurrencyCourses
-//
+
 //  Created by Рамазан Нуриев on 01.10.2021.
 //
 
@@ -44,7 +44,7 @@ class CoursesController: UITableViewController {
         }
         NotificationCenter.default.addObserver(forName: NSNotification.Name("ErrorWhenXMLloading"), object: nil, queue: nil) { (notification) in
             let errorName =  notification.userInfo?["ErrorName"]
-            print(errorName)
+            print(errorName!)
             DispatchQueue.main.async {
                 let barButtonItem = UIBarButtonItem(barButtonSystemItem: UIBarButtonItem.SystemItem.refresh, target: self, action: #selector(self.pushRefreshAction(_:)))
                 self.navigationItem.rightBarButtonItem = barButtonItem
@@ -71,10 +71,11 @@ class CoursesController: UITableViewController {
 
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "Cell", for: indexPath)
+        let cell = tableView.dequeueReusableCell(withIdentifier: "Cell", for: indexPath) as! CourseCell
         let courseForCell = Model.shared.currencies[indexPath.row]
-        cell.textLabel?.text = courseForCell.Name
-        cell.detailTextLabel?.text = courseForCell.Value
+        cell.initCell(currency: courseForCell)
+        //cell.textLabel?.text = courseForCell.Name
+        //cell.detailTextLabel?.text = courseForCell.Value
         return cell
     }
 

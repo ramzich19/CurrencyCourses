@@ -18,6 +18,8 @@
 		E82CB8ED272BD869007FBFA8 /* ConverterController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E82CB8EC272BD869007FBFA8 /* ConverterController.swift */; };
 		E84E5380272D504D002331CB /* SelectCurrencyController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E84E537F272D504D002331CB /* SelectCurrencyController.swift */; };
 		E84E5382272D5D11002331CB /* SettingsController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E84E5381272D5D11002331CB /* SettingsController.swift */; };
+		E8949A6B272EA158005B209A /* flagsImages in Resources */ = {isa = PBXBuildFile; fileRef = E8949A6A272EA158005B209A /* flagsImages */; };
+		E8949A6D272EA3E6005B209A /* CourseCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8949A6C272EA3E6005B209A /* CourseCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -34,6 +36,8 @@
 		E82CB8EC272BD869007FBFA8 /* ConverterController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConverterController.swift; sourceTree = "<group>"; };
 		E84E537F272D504D002331CB /* SelectCurrencyController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectCurrencyController.swift; sourceTree = "<group>"; };
 		E84E5381272D5D11002331CB /* SettingsController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsController.swift; sourceTree = "<group>"; };
+		E8949A6A272EA158005B209A /* flagsImages */ = {isa = PBXFileReference; lastKnownFileType = folder; path = flagsImages; sourceTree = "<group>"; };
+		E8949A6C272EA3E6005B209A /* CourseCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CourseCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -71,6 +75,7 @@
 				E815A2E32704739300CB964A /* SceneDelegate.swift */,
 				E815A2F72704747D00CB964A /* Model.swift */,
 				E815A2F92706FCEA00CB964A /* CoursesController.swift */,
+				E8949A6C272EA3E6005B209A /* CourseCell.swift */,
 				E82CB8EC272BD869007FBFA8 /* ConverterController.swift */,
 				E84E537F272D504D002331CB /* SelectCurrencyController.swift */,
 				E84E5381272D5D11002331CB /* SettingsController.swift */,
@@ -78,6 +83,7 @@
 				E815A2EC2704739400CB964A /* LaunchScreen.storyboard */,
 				E815A2EF2704739400CB964A /* Info.plist */,
 				E815A2F52704744000CB964A /* data.xml */,
+				E8949A6A272EA158005B209A /* flagsImages */,
 			);
 			path = CurrencyCourses;
 			sourceTree = "<group>";
@@ -140,6 +146,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E8949A6B272EA158005B209A /* flagsImages in Resources */,
 				E815A2EE2704739400CB964A /* LaunchScreen.storyboard in Resources */,
 				E815A2F62704744000CB964A /* data.xml in Resources */,
 				E815A2EB2704739400CB964A /* Assets.xcassets in Resources */,
@@ -158,6 +165,7 @@
 				E84E5380272D504D002331CB /* SelectCurrencyController.swift in Sources */,
 				E815A2E42704739300CB964A /* SceneDelegate.swift in Sources */,
 				E84E5382272D5D11002331CB /* SettingsController.swift in Sources */,
+				E8949A6D272EA3E6005B209A /* CourseCell.swift in Sources */,
 				E815A2FA2706FCEA00CB964A /* CoursesController.swift in Sources */,
 				E82CB8ED272BD869007FBFA8 /* ConverterController.swift in Sources */,
 				E815A2F82704747D00CB964A /* Model.swift in Sources */,
