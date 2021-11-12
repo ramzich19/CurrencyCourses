@@ -10,13 +10,8 @@ import UIKit
 class ConverterController: UIViewController {
 
     @IBOutlet weak var labelCoursesForDate: UILabel!
-    
-    
-    
     @IBOutlet weak var buttonFrom: UIButton!
-    
     @IBOutlet weak var buttonTo: UIButton!
-    
     
     
     @IBAction func pushFromAction(_ sender: Any) {

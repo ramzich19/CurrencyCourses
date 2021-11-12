@@ -30,7 +30,7 @@ class Currency {
     
     var imageFlag : UIImage? {
         if let CharCode = CharCode {
-            return UIImage(named: CharCode)
+            return UIImage(named: "flagsImages/" + CharCode + ".png")
         }
         return nil
     }
@@ -73,8 +73,6 @@ class Model: NSObject, XMLParserDelegate {
         if FileManager.default.fileExists(atPath: path){
             return path
         }
-        
-       
         return Bundle.main.path(forResource: "data", ofType: "xml")!
         
     }
@@ -82,16 +80,13 @@ class Model: NSObject, XMLParserDelegate {
         return URL(fileURLWithPath: pathForXML)
         
     }
-    
     //загрузка XML с sbr.ru и сохранение его в каталоге приложения
     //http://www.cbr.ru/scripts/XML_daily.asp?date_req=02/03/2002
     func loadXMLFile(date:Date?) {
-        
         var strUrl = "http://www.cbr.ru/scripts/XML_daily.asp?date_req="
-        
         if date != nil {
             let dateFormatter = DateFormatter()
-            dateFormatter.dateFormat = "dd/mm/yyyy"
+            dateFormatter.dateFormat = "dd/MM/yyyy"
             strUrl = strUrl+dateFormatter.string(from: date!)
         }
         
@@ -151,35 +146,24 @@ class Model: NSObject, XMLParserDelegate {
                 toCurrency = c
             }
         }
-        
-        
     }
     
     var currentCurrency: Currency?
      
     func parser(_ parser: XMLParser, didStartElement elementName: String, namespaceURI: String?, qualifiedName qName: String?, attributes attributeDict: [String : String] = [:]){
-        
-        
         if elementName == "ValCurs" {
             if let currentDateString = attributeDict["Date"] {
             currentDate = currentDateString
             }
-        } 
-       
-        
+        }
         if elementName == "Valute" {
             currentCurrency = Currency()
         }
-            
     }
     var currentCharacters: String = ""
     func parser(_ parser: XMLParser, foundCharacters string: String) {
         currentCharacters = string
-
-        
     }
-
-    
     func parser(_ parser: XMLParser, didEndElement elementName: String, namespaceURI: String?, qualifiedName qName: String?){
         /*
          <NumCode>826</NumCode>

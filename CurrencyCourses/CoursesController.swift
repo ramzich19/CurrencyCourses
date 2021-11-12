@@ -16,14 +16,11 @@ class CoursesController: UITableViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        
         NotificationCenter.default.addObserver(forName: NSNotification.Name(rawValue: "startLoadingXML"), object: nil, queue: nil) { (notification) in
              
             DispatchQueue.main.async {
                 let activityIndicator = UIActivityIndicatorView(style: UIActivityIndicatorView.Style.medium)
-                activityIndicator.color = UIColor.black
-                
+                activityIndicator.color = UIColor.blue
                 activityIndicator.startAnimating()
                 self.navigationItem.rightBarButtonItem?.customView = activityIndicator
                
@@ -39,8 +36,6 @@ class CoursesController: UITableViewController {
                 let barButtonItem = UIBarButtonItem(barButtonSystemItem: UIBarButtonItem.SystemItem.refresh, target: self, action: #selector(self.pushRefreshAction(_:)))
                 self.navigationItem.rightBarButtonItem = barButtonItem
             }
-        
-                            
         }
         NotificationCenter.default.addObserver(forName: NSNotification.Name("ErrorWhenXMLloading"), object: nil, queue: nil) { (notification) in
             let errorName =  notification.userInfo?["ErrorName"]
@@ -52,11 +47,13 @@ class CoursesController: UITableViewController {
         }
     
         navigationItem.title =  Model.shared.currentDate
-        Model.shared.loadXMLFile(date: nil)
+        
     }
 
     
-
+    override func viewDidAppear(_ animated: Bool) {
+        Model.shared.loadXMLFile(date: nil)
+    }
     // MARK: - Table view data source
 
     override func numberOfSections(in tableView: UITableView) -> Int {
